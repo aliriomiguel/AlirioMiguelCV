@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AliriomiguelcvService } from '../services/aliriomiguelcv.service';
 
 @Component({
   selector: 'app-resume',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./resume.component.css']
 })
 export class ResumeComponent {
+
+  constructor(public cv: AliriomiguelcvService){
+
+  }
 
 }
