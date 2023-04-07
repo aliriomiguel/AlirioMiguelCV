@@ -14,6 +14,7 @@ export class AliriomiguelcvService {
   education: any[] = [];
   services: any[] = [];
   testimonials: any[] = [];
+  blog: any[] = [];
 
   corsHeaders: HttpHeaders;
 
@@ -31,6 +32,7 @@ export class AliriomiguelcvService {
     this.getEducation();
     this.getServices();
     this.getTestimonials(); 
+    this.getBlog();
   }
 
   private getSkills(): void {
@@ -38,7 +40,6 @@ export class AliriomiguelcvService {
       .subscribe(
         (resp: any) => {
           this.skills = resp
-          console.log(this.skills);
         }
       );
   }
@@ -48,7 +49,6 @@ export class AliriomiguelcvService {
       .subscribe(
         (resp: any) => {
           this.techStack = resp;
-          console.log(this.techStack);
         }
       );
 
@@ -59,7 +59,6 @@ export class AliriomiguelcvService {
       .subscribe(
         (resp: any) => {
           this.qaStack = resp;
-          console.log(this.qaStack);
         }
       );
 
@@ -70,7 +69,6 @@ export class AliriomiguelcvService {
       .subscribe(
         (resp: any) => {
           this.experience = resp;
-          console.log(this.experience);
         }
       );
 
@@ -81,7 +79,6 @@ export class AliriomiguelcvService {
       .subscribe(
         (resp: any) => {
           this.education = resp;
-          console.log(this.education);
         }
       );
 
@@ -93,7 +90,6 @@ export class AliriomiguelcvService {
       .subscribe(
         (resp: any) => {
           this.services = resp;
-          console.log(this.services);
         }
       );
   }
@@ -103,9 +99,17 @@ export class AliriomiguelcvService {
       .subscribe(
         (resp: any) => {
           this.testimonials = resp;
-          console.log(this.testimonials);
         }
       );
 
+  }
+
+  private getBlog(){
+    this.http.get('https://cvaliriomiguel-default-rtdb.firebaseio.com/Blog.json')
+      .subscribe(
+        (resp: any) =>{
+          this.blog = resp;
+        }
+      );
   }
 }

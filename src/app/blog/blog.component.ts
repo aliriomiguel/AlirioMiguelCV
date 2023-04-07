@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AliriomiguelcvService } from '../services/aliriomiguelcv.service';
 
 @Component({
   selector: 'app-blog',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent {
+
+  constructor(public cv: AliriomiguelcvService){
+
+  }
 
 }

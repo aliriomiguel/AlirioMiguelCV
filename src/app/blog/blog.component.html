@@ -4,90 +4,31 @@
             <h3 class="block-title">My Blog</h3>
             <div class="row">
                 <div class="col-md-10 mx-auto">
-                    <div class="post">
-                        <div class="post-thumbnail">
-                            <a class="open-post" href="post-single.html">
-                                <img src="assets/images/blog/medium/4.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-title">
-                            <a class="open-post" href="post-single.html"><h2>Typography for web</h2></a>
-                            <p class="post-info">
-                                <span class="post-author">Posted by John Sparrow</span>
-                                <span class="slash"></span>
-                                <span class="post-date">Dec 08, 2017</span>
-                                <span class="slash"></span>
-                                <span class="post-catetory">Food</span>
-                            </p>
-                        </div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur. Aliquam erat volutpat. Nunc eu nibh nulla, id cursus arcu. </p>
-                            <a class="btn open-post" href="post-single.html">Read More</a>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-thumbnail">
-                            <a class="open-post" href="post-single.html">
-                                <img src="assets/images/blog/medium/3.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-title">
-                            <a class="open-post" href="post-single.html"><h2>Typography for web</h2></a>
-                            <p class="post-info">
-                                <span class="post-author">Posted by John Sparrow</span>
-                                <span class="slash"></span>
-                                <span class="post-date">Dec 08, 2017</span>
-                                <span class="slash"></span>
-                                <span class="post-catetory">Food</span>
-                            </p>
-                        </div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur. Aliquam erat volutpat. Nunc eu nibh nulla, id cursus arcu. </p>
-                            <a class="btn open-post" href="post-single.html">Read More</a>
+                    <div *ngFor="let blogInd of cv.blog">
+                        <div class="post">
+                            <div class="post-thumbnail">
+                                <a class="open-post" [attr.href]="blogInd.url" target="_blank">
+                                    <img src={{blogInd.tumbnail}} alt="">
+                                </a>
+                            </div>
+                            <div class="post-title">
+                                <a class="open-post" [attr.href]="blogInd.url" target="_blank"><h2>{{blogInd.title}}</h2></a>
+                                <p class="post-info">
+                                    <span class="post-author">Posted by {{blogInd.author}}</span>
+                                    <span class="slash"></span>
+                                    <span class="post-date">{{blogInd.date}}</span>
+                                    <span class="slash"></span>
+                                    <span class="post-category">{{blogInd.category}}</span>
+                                </p>
+                            </div>
+                            <div class="post-body">
+                                <p>{{blogInd.description}}</p>
+                                <a class="btn open-post" [attr.href]="blogInd.url" target="_blank">Read More</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="post">
-                        <div class="post-thumbnail">
-                            <a class="open-post" href="post-single.html">
-                                <img src="assets/images/blog/medium/2.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-title">
-                            <a class="open-post" href="post-single.html"><h2>Typography for web</h2></a>
-                            <p class="post-info">
-                                <span class="post-author">Posted by John Sparrow</span>
-                                <span class="slash"></span>
-                                <span class="post-date">Dec 08, 2017</span>
-                                <span class="slash"></span>
-                                <span class="post-catetory">Food</span>
-                            </p>
-                        </div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur. Aliquam erat volutpat. Nunc eu nibh nulla, id cursus arcu. </p>
-                            <a class="btn open-post" href="post-single.html">Read More</a>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-thumbnail">
-                            <a class="open-post" href="post-single.html">
-                                <img src="assets/images/blog/medium/1.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-title">
-                            <a class="open-post" href="post-single.html"><h2>Typography for web</h2></a>
-                            <p class="post-info">
-                                <span class="post-author">Posted by John Sparrow</span>
-                                <span class="slash"></span>
-                                <span class="post-date">Dec 08, 2017</span>
-                                <span class="slash"></span>
-                                <span class="post-catetory">Food</span>
-                            </p>
-                        </div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur. Aliquam erat volutpat. Nunc eu nibh nulla, id cursus arcu. </p>
-                            <a class="btn open-post" href="post-single.html">Read More</a>
-                        </div>
-                    </div>
+
+                    <!-- Pagination 
                     <div class="text-center">
                         <ul class="pagination">
                             <li class="page-item disabled">
@@ -104,6 +45,7 @@
                             </li>
                         </ul>
                     </div>
+                    --> 
                 </div>
             </div>
         </div>
