@@ -15,6 +15,7 @@ export class AliriomiguelcvService {
   services: any[] = [];
   testimonials: any[] = [];
   blog: any[] = [];
+  portfolio: any[] = [];
 
   corsHeaders: HttpHeaders;
 
@@ -33,6 +34,7 @@ export class AliriomiguelcvService {
     this.getServices();
     this.getTestimonials(); 
     this.getBlog();
+    this.getPortfolio();
   }
 
   private getSkills(): void {
@@ -109,6 +111,15 @@ export class AliriomiguelcvService {
       .subscribe(
         (resp: any) =>{
           this.blog = resp;
+        }
+      );
+  }
+
+  private getPortfolio(){
+    this.http.get('https://cvaliriomiguel-default-rtdb.firebaseio.com/Portfolio.json')
+      .subscribe(
+        (resp:any) => {
+          this.portfolio = resp;
         }
       );
   }

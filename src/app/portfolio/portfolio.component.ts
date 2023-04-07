@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AliriomiguelcvService } from '../services/aliriomiguelcv.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent {
+
+  constructor(public cv: AliriomiguelcvService){
+
+  }
 
 }
